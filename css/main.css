@@ -1,0 +1,180 @@
+/*Commn style*/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+body {
+    font-family: 'Work Sans',
+        sans-serif;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/*End Commn style*/
+
+/*Start header*/
+.header {
+    background-color: #ddd;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+
+}
+
+.header .flex {
+    justify-content: space-between;
+}
+
+/*logo style*/
+.logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.right-logo {
+    color: rgb(15, 158, 122);
+}
+
+/*end logo style*/
+
+/*navabar style*/
+nav li a {
+    color: #000;
+    font-size: 18px;
+    padding: 20px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+
+}
+
+.iconbars {
+    display: none;
+
+}
+
+/*Add animation style to navbar */
+nav li a:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    height: 3px;
+    width: 80%;
+    background-color: rgb(15, 158, 122);
+    transform: scaleX(0);
+    transition: transform 0.4s 0.2s;
+    transform-origin: right;
+}
+
+nav li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.4s 0.1s;
+
+}
+
+/*Add animation style to navbar */
+
+/*end navabar style*/
+
+/*End header*/
+
+/*Start Section one*/
+.section-one .container {
+    /*To Make it apper under header  */
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-content: space-evenly;
+
+}
+
+.box {
+    background-color: #ddd;
+    padding: 20px;
+    margin-left: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    position: relative;
+    transition: 0.3s;
+    z-index: 1;
+
+
+}
+
+.box .title-box,
+.box .icons {
+    text-align: center;
+
+}
+
+.box .icons {
+    cursor: pointer;
+    font-size: 22px;
+    color: rgb(15, 158, 122)
+}
+
+
+/*Add animation to box */
+.box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #222;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+.box:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+
+
+}
+
+.box:hover {
+    color: #fff;
+    transition: 0.3s;
+}
+
+/* End Add Animation to the box */
+/*End Section one*/
